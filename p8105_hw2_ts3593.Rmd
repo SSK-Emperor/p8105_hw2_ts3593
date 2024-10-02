@@ -1,0 +1,28 @@
+---
+title: "p8105_hw2_ts3593"
+author: "Shi Tiancheng"
+date: "2024-10-02"
+output: github_document
+---
+```{r}
+install.packages("readxl")
+```
+
+Problem 1
+```{r}
+library(tidyverse)
+```
+
+```{r}
+nyc_subway = read.csv("NYC_Transit_Subway_Entrance_And_Exit_Data.csv")
+select(nyc_subway, Line, Station.Name, Station.Latitude, Station.Longitude, Route1:Route11, Entry, Vending, Entrance.Type, ADA)
+```
+
+Problem 2
+```{r}
+library(readxl)
+wheel = read_excel("202309 Trash Wheel Collection Data.xlsx")
+```
+
+
+
