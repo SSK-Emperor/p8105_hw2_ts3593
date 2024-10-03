@@ -110,6 +110,7 @@ Gwynnda_trash_sheet = mutate(Gwynnda_trash_sheet, sheet = "Gwynnda.Trash")
 Trash_bind = bind_rows(Mr_trash_sheet,professor_trash_sheet,Gwynnda_trash_sheet)
 summary(Trash_bind)
 ```
+Mr. trash start collect trash in 2014.
 
 ```{r}
 sum(Trash_bind$weight_tons)
