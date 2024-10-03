@@ -138,6 +138,7 @@ baker = janitor::clean_names(baker)
 ```{r}
 bakes = read.csv("./gbb_datasets/bakes.csv")
 bakes = janitor::clean_names(bakes)
+bakes$baker[bakes$baker == '"Jo"'] <- "Jo" # change "Jo" to Jo
 ```
 
 ```{r}
@@ -160,12 +161,18 @@ anti_join(baker,results, by = c("baker","series"))
 
 ```{r}
 Baker_df = full_join(baker,results, by = c("baker","series"))
-Baker_df = full_join(Baker_df,bakes, by = c("baker","series","episode"))
+Baker_df = full_join(Baker_df,bakes, by = c("baker","series","episode")) # join all the dataset together
 ```
 
 ```{r}
 arrange(filter(results,series>=5,result %in% c("WINNER","STAR BAKER")),series, episode)
 ```
+In series 5, Nancy is surprised.
+In series 6,Nadiya is predictable.
+In series 7,Candice is predictable.
+In series 8,Sophie is predictable.
+In series 9,Rahul is predictable.
+In series 10,David is surprised.
 
 ```{r}
 viewers = read.csv("./gbb_datasets/viewers.csv")
@@ -179,5 +186,6 @@ head(viewers, 10)
 ```{r}
 summary(viewers)
 ```
-
+The average viewers in Season 1 is 2.770.
+The average viewers in Season 5 is 10.039.
 
